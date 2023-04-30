@@ -32,7 +32,10 @@ apps:
 parts:
   linwood:
     plugin: flutter
-    source: https://github.com/LinwoodDev/Butterfly/releases/download/v1.6.1/linwood-butterfly-linux.tar.gz 
+    source: https://github.com/LinwoodDev/Butterfly/releases/download/v1.6.1/linwood-butterfly-linux.tar.gz
+    build-packages:
+      - curl
+      - build-essentials
     parse-info: [usr/share/metainfo/dev.linwood.butterfly.appdata.xml]
     
       
