@@ -1,9 +1,7 @@
 name: linwood
 grade: stable
 version: '1.6.1'
-summary: Powerful, minimalistic, cross-platform, opensource note-taking app.
-description: |
-  Butterfly is a note app where your ideas come first. You can paint, add texts and export them easily on every device.
+adopt-info: linwood
 base: core22
 confinement: strict
 compression: lzo
@@ -12,7 +10,7 @@ architectures:
     build-for: [amd64]
 
 slots:
-  dbus-daemon:
+  linwood:
     interface: dbus
     bus: session
     name: dev.linwood.butterfly
@@ -22,20 +20,17 @@ apps:
     command: butterfly
     extensions: [gnome]
     plugs:
+      - home
       - optical-drive
       - removable-media
-    slots:
-      - dbus-daemon
     common-id: dev.linwood.butterfly
     desktop: usr/share/applications/dev.linwood.butterfly.desktop
 
 parts:
   linwood:
     plugin: flutter
-    source: https://github.com/LinwoodDev/Butterfly/releases/download/v1.6.1/linwood-butterfly-linux.tar.gz
-    build-packages:
-      - curl
-      - build-essential
+    source: https://github.com/LinwoodDev/Butterfly.git
+    source-tag: v$SNAPCRAFT_PROJECT_VERSION
     parse-info: [usr/share/metainfo/dev.linwood.butterfly.appdata.xml]
     
       
