@@ -32,6 +32,8 @@ parts:
     source: https://github.com/LinwoodDev/Butterfly.git
     source-tag: v$SNAPCRAFT_PROJECT_VERSION
     parse-info: [usr/share/metainfo/dev.linwood.butterfly.appdata.xml]
+    build-packages:
+      - curl
     
       
   
