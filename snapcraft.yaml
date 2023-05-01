@@ -33,9 +33,9 @@ parts:
   linwood:
     plugin: dump
     source: https://github.com/LinwoodDev/Butterfly/releases/download/v1.6.1/linwood-butterfly-linux.tar.gz
-    override-build:
+    override-build: |
       craftctl default
-      chmod a+x butterfly
+      chmod a+x ./butterfly
     #build-packages:
       #- curl
       #- build-essential
