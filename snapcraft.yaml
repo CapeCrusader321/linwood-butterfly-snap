@@ -36,9 +36,8 @@ parts:
     override-build: |
       craftctl default
       chmod a+x ./butterfly
-    #build-packages:
-      #- curl
-      #- build-essential
+    stage-packages:
+      - libjsoncpp25
     parse-info: [usr/share/metainfo/dev.linwood.butterfly.appdata.xml]
     
       
