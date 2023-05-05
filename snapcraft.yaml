@@ -11,11 +11,11 @@ architectures:
   - build-on: [amd64]
     build-for: [amd64]
 
-slots:
-  linwood:
-    interface: dbus
-    bus: session
-    name: dev.linwood.butterfly
+#slots:
+  #linwood:
+    #interface: dbus
+    #bus: session
+    #name: dev.linwood.butterfly
 
 apps:
   linwood:
