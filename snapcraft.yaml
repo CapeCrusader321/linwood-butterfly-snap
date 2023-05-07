@@ -12,12 +12,6 @@ architectures:
   - build-on: armhf
   - build-on: arm64
 
-#slots:
-  #linwood:
-    #interface: dbus
-    #bus: session
-    #name: dev.linwood.butterfly
-
 apps:
   linwood:
     command: butterfly
@@ -32,18 +26,20 @@ apps:
 
 parts:
   linwood:
-    plugin: dump
-    source: https://github.com/LinwoodDev/Butterfly/releases/download/v1.6.1/linwood-butterfly-linux.tar.gz
-    override-build: |
-      craftctl default
-      chmod a+x ./butterfly
+    plugin: flutter
+    source: https://github.com/LinwoodDev/Butterfly.git
     stage-packages:
       - libjsoncpp25
     parse-info: [usr/share/metainfo/dev.linwood.butterfly.appdata.xml]
     
       
+#override-build: |
+  #craftctl default
+  #chmod a+x ./butterfly
   
-      
-
-
+#slots:
+  #linwood:
+    #interface: dbus
+    #bus: session
+    #name: dev.linwood.butterfly
 
