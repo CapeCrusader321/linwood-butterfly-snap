@@ -28,6 +28,9 @@ parts:
   linwood:
     plugin: flutter
     source: https://github.com/LinwoodDev/Butterfly.git
+    build-packages:
+      - build-essential
+      - curl
     stage-packages:
       - libjsoncpp25
     parse-info: [usr/share/metainfo/dev.linwood.butterfly.appdata.xml]
