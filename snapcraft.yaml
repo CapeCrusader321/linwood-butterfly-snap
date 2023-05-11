@@ -31,11 +31,13 @@ parts:
     build-packages:
       - build-essential
       - curl
+      - wget
     override-pull: |
       craftctl default
       craftctl set version=$(git describe --tags --abbrev=0)
       VER="$(git describe --tags --abbrev=0)"
-      curl -LO https://github.com/LinwoodDev/Butterfly/releases/download/${VER}/linwood-butterfly-linux.tar.gz
+      wget -q -O- https://github.com/LinwoodDev/Butterfly/releases/download/${VER}/linwood-butterfly-linux.tar.gz |\
+           tar xzf - --strip-components=1 -C $CRAFT_PART_SRC
     stage-packages:
       - libjsoncpp25
     parse-info: [usr/share/metainfo/dev.linwood.butterfly.appdata.xml] 
