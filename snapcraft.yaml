@@ -1,6 +1,6 @@
 name: linwood
 grade: stable
-version: '1.6.1'
+adopt-info: linwood
 summary: Powerful, minimalistic, cross-platform, opensource note-taking app.
 description: |
   Butterfly is a note app where your ideas come first. You can paint, add texts and export them easily on every device.
@@ -36,17 +36,10 @@ parts:
       craftctl set version=$(git describe --tags --abbrev=0)
       VER="$(git describe --tags --abbrev=0)"
       curl -LO https://github.com/LinwoodDev/Butterfly/releases/download/${VER}/linwood-butterfly-linux.tar.gz
-    #https://github.com/LinwoodDev/Butterfly/releases/download/v2.0.0-alpha.2/linwood-butterfly-linux.tar.gz
     stage-packages:
       - libjsoncpp25
     parse-info: [usr/share/metainfo/dev.linwood.butterfly.appdata.xml] 
     override-build: |
       craftctl default
       chmod a+x ./butterfly
-  
-#slots:
-  #linwood:
-    #interface: dbus
-    #bus: session
-    #name: dev.linwood.butterfly
-
+ 
